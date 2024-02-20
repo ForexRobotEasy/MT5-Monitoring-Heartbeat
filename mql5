@@ -1,0 +1,94 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                    MT5 Monitoring Heartbeat|
+//|                                             Copyright 2021, Forex Robot Easy Team |
+//|                                      https://www.forexroboteasy.com |
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Establish connection to trading terminals and VPS
+   if(!ConnectToTerminals())
+   {
+      Print('Failed to connect to trading terminals and VPS!');
+      return INIT_FAILED;
+   }
+   
+   // Initialize chart for monitoring purposes
+   if(!InitChart())
+   {
+      Print('Failed to initialize chart for monitoring!');
+      return INIT_FAILED;
+   }
+   
+   // Start monitoring process
+   StartMonitoring();
+   
+   return INIT_SUCCEEDED;
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Stop monitoring process
+   StopMonitoring();
+   
+   // Disconnect from trading terminals and VPS
+   DisconnectFromTerminals();
+}
+
+//+------------------------------------------------------------------+
+//| Connect to trading terminals and VPS                             |
+//+------------------------------------------------------------------+
+bool ConnectToTerminals()
+{
+   // Implement code to establish connection
+   // ...
+   
+   // Return true if connection is successful, false otherwise
+   return true;
+}
+
+//+------------------------------------------------------------------+
+//| Initialize chart for monitoring                                  |
+//+------------------------------------------------------------------+
+bool InitChart()
+{
+   // Implement code to initialize chart
+   // ...
+   
+   // Return true if chart initialization is successful, false otherwise
+   return true;
+}
+
+//+------------------------------------------------------------------+
+//| Start monitoring process                                         |
+//+------------------------------------------------------------------+
+void StartMonitoring()
+{
+   // Implement code to start monitoring process
+   // ...
+}
+
+//+------------------------------------------------------------------+
+//| Stop monitoring process                                          |
+//+------------------------------------------------------------------+
+void StopMonitoring()
+{
+   // Implement code to stop monitoring process
+   // ...
+}
+
+//+------------------------------------------------------------------+
+//| Disconnect from trading terminals and VPS                        |
+//+------------------------------------------------------------------+
+void DisconnectFromTerminals()
+{
+   // Implement code to disconnect from trading terminals and VPS
+   // ...
+}
